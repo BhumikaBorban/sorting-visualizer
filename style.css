@@ -1,0 +1,113 @@
+:root {
+    --bg-dark: #0f172a;
+    --card-bg: #1e293b;
+    --text-main: #f8fafc;
+    --bar-default: #64748b;
+    --bar-compare: #f43f5e; /* Red */
+    --bar-swap: #fbbf24;    /* Yellow */
+    --bar-pivot: #a855f7;   /* Purple */
+    --bar-min: #ec4899;     /* Pink */
+    --bar-sorted: #10b981;  /* Green */
+    --bar-scan: #60a5fa;    /* Blue */
+}
+
+body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    margin: 0;
+    overflow: hidden;
+}
+
+header {
+    background: var(--card-bg);
+    padding: 1rem 2rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.group { display: flex; gap: 0.75rem; align-items: center; }
+
+#container {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    height: 60vh;
+    padding: 50px 20px;
+    gap: 8px;
+}
+
+/* Bar Styling */
+.bar {
+    width: 40px;
+    background-color: var(--bar-default);
+    position: relative;
+    border-radius: 4px 4px 0 0;
+    transition: background-color 0.2s, height 0.2s;
+}
+
+.bar-value {
+    position: absolute;
+    top: -30px;
+    width: 100%;
+    text-align: center;
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+/* Algorithm State Colors */
+.bar-comparing { background-color: var(--bar-compare) !important; }
+.bar-swapping { background-color: var(--bar-swap) !important; }
+.bar-pivot { background-color: var(--bar-pivot) !important; }
+.bar-min { background-color: var(--bar-min) !important; }
+.bar-sorted { background-color: var(--bar-sorted) !important; }
+.bar-scanning { background-color: var(--bar-scan) !important; }
+
+/* Legend Styling */
+.legend {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 1rem;
+    background: #1e293b77;
+    font-size: 0.8rem;
+}
+
+.legend-item { display: flex; align-items: center; gap: 0.5rem; }
+.dot { width: 12px; height: 12px; border-radius: 50%; }
+
+/* Buttons & Inputs */
+input[type="text"], select {
+    background: #0f172a;
+    border: 1px solid #334155;
+    color: white;
+    padding: 0.5rem;
+    border-radius: 4px;
+}
+
+button {
+    padding: 0.6rem 1.2rem;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    transition: opacity 0.2s;
+}
+.Arr{
+  background-color:#38bdf8
+
+}
+#undo-btn{
+  color: #f8fafc;
+  background-color:#f43f5e;
+}
+.primary { background: #38bdf8; color: #0f172a; }
+.danger { background: #f43f5e; color: white; }
+button:disabled { opacity: 0.3; cursor: not-allowed; }
